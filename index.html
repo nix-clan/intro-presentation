@@ -29,9 +29,9 @@
 					<pre>
 						<code data-trim data-noescape>
 							let
-							a = abort "will never happen";
-							b = "hello";
-							c = "world";
+							  a = abort "will never happen";
+							  b = "hello";
+							  c = "world";
 							in b + c
 						</code>
 					</pre>
@@ -51,7 +51,7 @@
 
 								# Procedural
 								for i in range(len(names)):
-								names[i] = hash(names[i])
+								   names[i] = hash(names[i])
 
 								# Functional
 								names = map(hash, names)
@@ -60,15 +60,14 @@
 						<pre class="fragment fade-in-then-out">
 							<code data-trim data-noescape>
 								let
-								names = [ "Mary" "Isla" "Sam" ];
-								in builtins.map (x: builtins.hashString "sha256" x)
-								names
+								  names = [ "Mary" "Isla" "Sam" ];
+								in builtins.map (x: builtins.hashString "sha256" x)	names
 							</code>
 						</pre>
 						<pre class="fragment fade-in-then-out">
 							<code data-trim data-noescape>
 								let
-								names = [ "Mary" "Isla" "Sam" ];
+								  names = [ "Mary" "Isla" "Sam" ];
 								in builtins.map (builtins.hashString "sha256") names
 							</code>
 						</pre>

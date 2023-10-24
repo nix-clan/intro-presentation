@@ -18,7 +18,73 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-				<section> The Nix language </section>
+			<section>
+				<section>
+					The Nix language
+				</section>
+				<section>
+					<h3>Concepts:</h3>
+				</section>
+				<section>
+					<h3>Lazy</h3>
+					Expressions are only evaluated when their value is needed
+					(used).
+					<pre>
+						<code data-trim data-noescape>
+							let
+							a = abort "will never happen";
+							b = "hello";
+							c = "world";
+							in b + c
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>Functional</h3>
+					<div class="r-stack">
+						<div class="fragment fade-in-then-out">
+							Programming style based on mathematical functions. <br>
+							Instead of writing sequence of operations that should be
+							executed. <br>
+							You apply functions to input to generate ouput.
+						</div>
+						<pre class="fragment fade-in-then-out">
+							<code data-trim data-noescape>
+								names = ['Mary', 'Isla', 'Sam']
+
+								# Procedural
+								for i in range(len(names)):
+								names[i] = hash(names[i])
+
+								# Functional
+								names = map(hash, names)
+							</code>
+						</pre>
+						<pre class="fragment fade-in-then-out">
+							<code data-trim data-noescape>
+								let
+								names = [ "Mary" "Isla" "Sam" ];
+								in builtins.map (x: builtins.hashString "sha256" x)
+								names
+							</code>
+						</pre>
+						<pre class="fragment fade-in-then-out">
+							<code data-trim data-noescape>
+								let
+								names = [ "Mary" "Isla" "Sam" ];
+								in builtins.map (builtins.hashString "sha256") names
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section>
+					<h3>Pure</h3>
+					A pure function is a function where the return value is only determined by its
+					inputs. <br>
+					In Nix, all build operations try to be as pure as possible to achieve
+					reproducible builds. <br>
+				</section>
+			</section>
 		</div>
 	</div>
 

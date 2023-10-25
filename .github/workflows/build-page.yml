@@ -6,15 +6,12 @@ on:
 
 jobs:
   build:
-    runs-on: docker.nix-community.org/nixpkgs/nix-flakes
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Build
-        run: nix flake build
-
-      - name: Deploy
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
+      - run: nix build
+      - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
           branch: gh-pages

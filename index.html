@@ -259,7 +259,7 @@
 					</pre>
 				</section>
 				<section>
-						<pre>
+					<pre>
 						<code data-trim class="r-stretch">
                             {
                               "flakes": [
@@ -676,12 +676,13 @@
                               "version": 2
                             }
 						</code>
-						</pre>
+					</pre>
 				</section>
 				<section>
-						Flake Outputs
+					Flake Outputs
 				</section>
-				<section data-background-iframe="https://nixos.wiki/wiki/Flakes#Output_schema" data-background-interactive>
+				<section data-background-iframe="https://nixos.wiki/wiki/Flakes#Output_schema"
+					data-background-interactive>
 				</section>
 			</section>
 			<section>
@@ -695,26 +696,43 @@
 				<section>
 					FHS: Peeking behind the curtain
 				</section>
-				<section data-background-image="https://linuxconfig.org/wp-content/uploads/2013/03/Directory-Filesystem-Hierarchy-Standard.jpg" data-background-size="contain">
+				<section data-background-image="https://linuxconfig.org/wp-content/uploads/2013/03/Directory-Filesystem-Hierarchy-Standard.jpg"
+					data-background-size="contain">
 				</section>
 				<section>
-					<pre>
-						<code data-trim class="r-stretch">
-							# ls /nix/store
+					<div class="r-stack">
+						<div>
+							<pre>
+								<code data-trim>
+									# ls /bin
+									sh
+								</code>
+							</pre>
+							<small class="fragment fade-in-then-out">
+								Huh??<br><img
+									data-src="https://media.tenor.com/eRdMTSpHFfIAAAAd/huh-rabbit.gif"
+									width="200"></small>
+						</div>
+						<div class="fragment fade-in">
+							<pre>
+								<code data-trim class="r-stretch">
+									# ls /nix/store
 
-							zzfarkcyb4v11ai1kbk3mdh2y7jalbiq-CVE-2017-8372-CVE-2017-8373.patch.drv
-							zzfkkrvn1f4ks46z22rxbhnxg8mmj4bp-python3.10-sphinxcontrib-jsmath-1.0.1.drv
-							zzflbnwmr19w0b5vsvf90292bszkbqx4-patchelf-0.15.0.drv
-							zzi69bi53biq6zckij6cfwcjggqskbb2-asdf-3.3.6.tar.gz.drv
-							zznxvgy5pi4ny9dpl5gkxk9y5i1k436h-wayland-1.22.0.drv
-							zzpm91md3wqllaqpzm7whvcpafblcp3d-0007-qtbase-find-tools-in-PATH.patch
-							zzrgf0qw8vd3rd3fznzif1fh5k856rdy-libass-0.17.1/
-							zzwsixlsccw8vdy6wb9qqzj1fmyjis3n-net-tools-2.10/
-							zzxszlz0zj3054j087h0a87vg9chr6vl-foldl-1.4.14-r2.cabal.drv
-							zzyy4xm6m2vdqi0h0c0dgr75jl8s0n3b-source.drv
-							....
-						</code>
-					</pre>.
+									zzfarkcyb4v11ai1kbk3mdh2y7jalbiq-CVE-2017-8372-CVE-2017-8373.patch.drv
+									zzfkkrvn1f4ks46z22rxbhnxg8mmj4bp-python3.10-sphinxcontrib-jsmath-1.0.1.drv
+									zzflbnwmr19w0b5vsvf90292bszkbqx4-patchelf-0.15.0.drv
+									zzi69bi53biq6zckij6cfwcjggqskbb2-asdf-3.3.6.tar.gz.drv
+									zznxvgy5pi4ny9dpl5gkxk9y5i1k436h-wayland-1.22.0.drv
+									zzpm91md3wqllaqpzm7whvcpafblcp3d-0007-qtbase-find-tools-in-PATH.patch
+									zzrgf0qw8vd3rd3fznzif1fh5k856rdy-libass-0.17.1/
+									zzwsixlsccw8vdy6wb9qqzj1fmyjis3n-net-tools-2.10/
+									zzxszlz0zj3054j087h0a87vg9chr6vl-foldl-1.4.14-r2.cabal.drv
+									zzyy4xm6m2vdqi0h0c0dgr75jl8s0n3b-source.drv
+									....
+								</code>
+							</pre>
+						</div>
+					</div>
 				</section>
 				<section>
 					RPath
@@ -763,9 +781,9 @@
 		Reveal.initialize({
 			hash: true,
 
-		    slideNumber: "c/t",
+			slideNumber: "c/t",
 
-		    preloadIframes: true,
+			preloadIframes: true,
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealSearch, RevealMath, RevealNotes, RevealZoom]

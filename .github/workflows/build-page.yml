@@ -3,6 +3,7 @@ name: Build presentation
 on:
   push:
     branches: [ main ]
+    paths: '**.html'
 
 permissions:
   contents: read

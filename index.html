@@ -226,29 +226,38 @@
                                   Flake resolution
                                 </section>
                                 <section>
-                                  The flake registry
+                                  Flake URL-syntax
 
                                   <pre>
-                                    <code data-trim class="r-stretch">
-                                      $ nix run foobar#example
-                                      error: cannot find flake 'flake:foobar' in the flake registries
-                                    </code>
                                     <code data-trim class="r-stretch">
                                       nix run github:hyprwm/Hyprland
                                       nix run sourcehut:~michal_atlas/nur-packages#mystic
                                       nix flake show github:dev-null-undefined/NixOs
-                                      
-                                      # Same thing:
-                                      nix flake show flake:gemini
-                                      nix flake show gemini
                                       
                                       # Generic version
                                       nix flake show git+https://github.com/hyprwm/Hyprland
                                     </code>
                                   </pre>
                                 </section>
+                                <section data-background-iframe="https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples"
+					 data-background-interactive>
+                                </section>
+                                <section>
+                                  <pre>
+                                    <code data-trim class="r-stretch">
+                                      # Without type
+                                      $ nix run foobar#example
+                                      error: cannot find flake 'flake:foobar' in the flake registries
+                                      
+                                      # Same thing:
+                                      nix flake show flake:gemini
+                                      nix flake show gemini
+                                    </code>
+                                  </pre>
+                                </section>
                                 <section data-background-iframe="https://github.com/NixOS/flake-registry/blob/master/flake-registry.json"
 					 data-background-interactive>
+                                </section>
 			</section>
                         <section>
 			  Development environments: Demo

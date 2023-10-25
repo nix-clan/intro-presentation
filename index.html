@@ -266,8 +266,10 @@
 			  Declaring your own package: Demo
 			</section>
                         <section>
-                          FHS: Peeking behind the curtain
-                          A.K.A. Why Nix works?
+                          How Nix works?
+                          <section>
+                            FHS: Peeking behind the curtain
+                          </section>
                           <section>
                             <pre>
                               <code data-trim class="r-stretch">
@@ -296,6 +298,17 @@
                                 /nix/store/ffll6glz3gwx342z0ch8wx30p5cnqz1z-python3-3.11.5/lib:/nix/store/gqghjch4p1s69sv4mcjksb2kb65rwqjy-glibc-2.38-23/lib:/nix/store/9fy9zzhf613xp0c3jsjxbjq6yp8afrsv-gcc-12.3.0-lib/lib
                               </code>
                             </pre>
+                          </section>
+                          <section>
+                            Dependencies
+
+                            <table>
+                              <tr><th>Compile-time</th><td>Explicitly listed</td></tr>
+                              <tr><th>Runtime</th><td>Hashes of other paths that exist in a path</td></tr>
+                            </table>
+                          </section>
+                          <section>
+                            Derivation: Sandboxed Builds
                           </section>
                         </section>
 		</div>

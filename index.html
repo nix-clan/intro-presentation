@@ -225,95 +225,102 @@
 						</code>
 					</pre>
 				</section>
-                                <section>
-                                  Flake resolution
-                                </section>
-                                <section>
-                                  Flake URL-syntax
+				<section>
+					Flake resolution
+				</section>
+				<section>
+					Flake URL-syntax
 
-                                  <pre>
-                                    <code data-trim class="r-stretch">
-                                      nix run github:hyprwm/Hyprland
-                                      nix run sourcehut:~michal_atlas/nur-packages#mystic
-                                      nix flake show github:dev-null-undefined/NixOs
-                                      
-                                      # Generic version
-                                      nix flake show git+https://github.com/hyprwm/Hyprland
-                                    </code>
-                                  </pre>
-                                </section>
-                                <section data-background-iframe="https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples"
-					 data-background-interactive>
-                                </section>
-                                <section>
-                                  <pre>
-                                    <code data-trim class="r-stretch">
-                                      # Without type
-                                      $ nix run foobar#example
-                                      error: cannot find flake 'flake:foobar' in the flake registries
-                                      
-                                      # Same thing:
-                                      nix flake show flake:gemini
-                                      nix flake show gemini
-                                    </code>
-                                  </pre>
-                                </section>
-                                <section data-background-iframe="https://github.com/NixOS/flake-registry/blob/master/flake-registry.json"
-					 data-background-interactive>
-                                </section>
-			</section>
-                        <section>
-			  Development environments: Demo
-			</section>
-                        <section>
-			  Declaring your own package: Demo
-			</section>
-                        <section>
-                          How Nix works?
-                          <section>
-                            FHS: Peeking behind the curtain
-                          </section>
-                          <section>
-                            <pre>
-                              <code data-trim class="r-stretch">
-                                # ls /nix/store
-                                
-                                zzfarkcyb4v11ai1kbk3mdh2y7jalbiq-CVE-2017-8372-CVE-2017-8373.patch.drv
-                                zzfkkrvn1f4ks46z22rxbhnxg8mmj4bp-python3.10-sphinxcontrib-jsmath-1.0.1.drv
-                                zzflbnwmr19w0b5vsvf90292bszkbqx4-patchelf-0.15.0.drv
-                                zzi69bi53biq6zckij6cfwcjggqskbb2-asdf-3.3.6.tar.gz.drv
-                                zznxvgy5pi4ny9dpl5gkxk9y5i1k436h-wayland-1.22.0.drv
-                                zzpm91md3wqllaqpzm7whvcpafblcp3d-0007-qtbase-find-tools-in-PATH.patch
-                                zzrgf0qw8vd3rd3fznzif1fh5k856rdy-libass-0.17.1/
-                                zzwsixlsccw8vdy6wb9qqzj1fmyjis3n-net-tools-2.10/
-                                zzxszlz0zj3054j087h0a87vg9chr6vl-foldl-1.4.14-r2.cabal.drv
-                                zzyy4xm6m2vdqi0h0c0dgr75jl8s0n3b-source.drv
-                                ....
-                              </code>
-                            </pre>.
-                          </section>
-                          <section>
-                            RPath
-                            <pre>
-                              <code data-trim class="r-stretch">
-                                $ patchelf --print-rpath /nix/store/ffll6glz3gwx342z0ch8wx30p5cnqz1z-python3-3.11.5/bin/python
+					<pre>
+						<code data-trim class="r-stretch">
+							nix run github:hyprwm/Hyprland
+							nix run sourcehut:~michal_atlas/nur-packages#mystic
+							nix flake show github:dev-null-undefined/NixOs
 
-                                /nix/store/ffll6glz3gwx342z0ch8wx30p5cnqz1z-python3-3.11.5/lib:/nix/store/gqghjch4p1s69sv4mcjksb2kb65rwqjy-glibc-2.38-23/lib:/nix/store/9fy9zzhf613xp0c3jsjxbjq6yp8afrsv-gcc-12.3.0-lib/lib
-                              </code>
-                            </pre>
-                          </section>
-                          <section>
-                            Dependencies
+							# Generic version
+							nix flake show git+https://github.com/hyprwm/Hyprland
+						</code>
+					</pre>
+				</section>
+				<section data-background-iframe="https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#examples"
+					data-background-interactive>
+				</section>
+				<section>
+					<pre>
+						<code data-trim class="r-stretch">
+							# Without type
+							$ nix run foobar#example
+							error: cannot find flake 'flake:foobar' in the flake registries
 
-                            <table>
-                              <tr><th>Compile-time</th><td>Explicitly listed</td></tr>
-                              <tr><th>Runtime</th><td>Hashes of other paths that exist in a path</td></tr>
-                            </table>
-                          </section>
-                          <section>
-                            Derivation: Sandboxed Builds
-                          </section>
-                        </section>
+							# Same thing:
+							nix flake show flake:gemini
+							nix flake show gemini
+						</code>
+					</pre>
+				</section>
+				<section data-background-iframe="https://github.com/NixOS/flake-registry/blob/master/flake-registry.json"
+					data-background-interactive>
+				</section>
+			</section>
+			<section>
+				Development environments: Demo
+			</section>
+			<section>
+				Declaring your own package: Demo
+			</section>
+			<section>
+				How Nix works?
+				<section>
+					FHS: Peeking behind the curtain
+				</section>
+				<section>
+					<pre>
+						<code data-trim class="r-stretch">
+							# ls /nix/store
+
+							zzfarkcyb4v11ai1kbk3mdh2y7jalbiq-CVE-2017-8372-CVE-2017-8373.patch.drv
+							zzfkkrvn1f4ks46z22rxbhnxg8mmj4bp-python3.10-sphinxcontrib-jsmath-1.0.1.drv
+							zzflbnwmr19w0b5vsvf90292bszkbqx4-patchelf-0.15.0.drv
+							zzi69bi53biq6zckij6cfwcjggqskbb2-asdf-3.3.6.tar.gz.drv
+							zznxvgy5pi4ny9dpl5gkxk9y5i1k436h-wayland-1.22.0.drv
+							zzpm91md3wqllaqpzm7whvcpafblcp3d-0007-qtbase-find-tools-in-PATH.patch
+							zzrgf0qw8vd3rd3fznzif1fh5k856rdy-libass-0.17.1/
+							zzwsixlsccw8vdy6wb9qqzj1fmyjis3n-net-tools-2.10/
+							zzxszlz0zj3054j087h0a87vg9chr6vl-foldl-1.4.14-r2.cabal.drv
+							zzyy4xm6m2vdqi0h0c0dgr75jl8s0n3b-source.drv
+							....
+						</code>
+					</pre>.
+				</section>
+				<section>
+					RPath
+					<pre>
+						<code data-trim class="r-stretch">
+							$ patchelf --print-rpath
+							/nix/store/ffll6glz3gwx342z0ch8wx30p5cnqz1z-python3-3.11.5/bin/python
+
+							/nix/store/ffll6glz3gwx342z0ch8wx30p5cnqz1z-python3-3.11.5/lib:/nix/store/gqghjch4p1s69sv4mcjksb2kb65rwqjy-glibc-2.38-23/lib:/nix/store/9fy9zzhf613xp0c3jsjxbjq6yp8afrsv-gcc-12.3.0-lib/lib
+						</code>
+					</pre>
+				</section>
+				<section>
+					Dependencies
+
+					<table>
+						<tr>
+							<th>Compile-time</th>
+							<td>Explicitly listed</td>
+						</tr>
+						<tr>
+							<th>Runtime</th>
+							<td>Hashes of other paths that exist in a path</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					Derivation: Sandboxed Builds
+				</section>
+			</section>
 		</div>
 	</div>
 

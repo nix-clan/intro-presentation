@@ -12,6 +12,7 @@
           src = ./.;
           hooks = {
             nixpkgs-fmt.enable = true;
+            shellcheck.enable = true;
           };
         };
       };

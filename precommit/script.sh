@@ -1,0 +1,2 @@
+
+ls completely $WRONG

@@ -703,9 +703,22 @@
 					<div class="r-stack">
 						<div>
 							<pre>
-								<code data-trim>
+								<code data-trim class="fragment fade-in">
 									# ls /bin
 									sh
+								</code>
+							</pre>
+							<pre>
+								<code data-trim class="fragment fade-in">
+									# ls /lib
+									ls: cannot access '/lib': No such file or
+									directory
+								</code>
+							</pre>
+							<pre>
+								<code data-trim class="fragment fade-in">
+									# ls /usr/bin
+									env
 								</code>
 							</pre>
 							<small class="fragment fade-in-then-out">

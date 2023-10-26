@@ -16,6 +16,7 @@
               mkdir "$out";
               env > "$out/env";
               ls /nix/store > "$out/visible-store";
+              echo "$BASH_SOURCE" > "$out/self";
             '')
           ];
           PATH = "${pkgs.coreutils}/bin";
@@ -23,20 +24,20 @@
         };
         unworth = builtins.derivation {
           name = "unworth";
-          builder = "${pkgs.bash}/bin/bash";
+          builder = "${pkgs.python3}/bin/python";
           args = [
-            (builtins.toFile "builder.sh" ''
-              exit 1
+            (builtins.toFile "builder.py" ''
+              exit(1)
             '')
           ];
           inherit system;
         };
         sloth = builtins.derivation {
           name = "sloth";
-          builder = "${pkgs.bash}/bin/bash";
+          builder = "${pkgs.python3}/bin/python";
           args = [
-            (builtins.toFile "builder.sh" ''
-              exit 0
+            (builtins.toFile "builder.py" ''
+              exit(0)
             '')
           ];
           inherit system;

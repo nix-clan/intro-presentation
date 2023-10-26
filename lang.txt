@@ -1,0 +1,39 @@
+Atoms
+- Num/Str/Bool/List
+Basic Operators
+- Precedence
+- Concat
+Lambdas
+- invocation syntax
+- invoke Lambdas in lists
+
+Attrsets
+- implicit flatenning
+- //
+- rec
+- inherit with ()
+- ?
+- or
+
+Attrset taking lambdas
+- ...
+- defaults
+- @
+
+let
+- with
+
+Splicing Strings '' ''
+- ${}
+- ''$
+- '''
+- whitespace elimination
+
+File Literals
+
+import
+
+builtins
+- Noogle
+
+nixpkgs.lib

@@ -773,8 +773,64 @@
 					</table>
 				</section>
 				<section>
-					Derivation: Sandboxed Builds
-				</section>
+				  Derivation: Sandboxed Builds
+                                </section>
+                                <section>The build sees:
+                                  <ul>
+                                    <li>Paths referenced by its derivation</li>
+                                    <li>That's it...</li>
+                                  </ul>
+                                </section>
+                                <section>
+                                  What's a derivation?
+                                  <pre>
+				    <code data-trim data-noescape>
+                                        builtins.derivation {
+                                          name = "mybuild";
+                                          builder = "${pkgs.python}/bin/python";
+                                          args = [ "${./script.py}" ];
+                                          system = "x86_64-linux";
+
+                                          # Optional additional environment
+                                          PATH="...";
+                                          ENV="...";
+                                        }
+				    </code>
+				  </pre>
+                                </section>
+                                <section>
+                                  How does source code get on the machine though?
+                                </section>
+                                <section>
+                                  Fixed-output Derivation:
+                                  <pre>
+				    <code data-trim data-noescape>
+                                        builtins.derivation {
+                                          name = "mybuild";
+                                          builder = "${pkgs.python}/bin/python";
+                                          args = [ "${./script.py}" ];
+                                          system = "x86_64-linux";
+				    </code>
+				  </pre>
+                                  <pre>
+				    <code data-trim data-noescape class="fragment fade-in">
+                                          outputHashAlgo = "sha256";
+                                          outputHash = "...";
+                                        }
+				    </code>
+				  </pre>
+                                </section>
+                                <section>The build sees:
+                                  <ul>
+                                    <li>Paths referenced by its derivation</li>
+                                    <li>That's it...</li>
+                                    <li class="fragment fade-in">The Internet</li>
+                                  </ul>
+                                </section>
+			        <section data-background-iframe="https://ryantm.github.io/nixpkgs/builders/fetchers/"
+					 data-background-interactive>
+                                  In practice:
+                                </section>
 			</section>
 		</div>
 	</div>
